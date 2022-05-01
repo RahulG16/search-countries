@@ -22,7 +22,7 @@ function SearchPage({ handleSubmit }: Props) {
 
           if (searchTerm.length > 0) {
             handleSubmit(searchTerm);
-            navigate(`/countryinfo/${searchTerm}`);
+            navigate(`/search-countries/countryinfo/${searchTerm}`);
           }
         }}
       >

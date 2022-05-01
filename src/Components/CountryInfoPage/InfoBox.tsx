@@ -29,8 +29,6 @@ function InfoBox({ countryInfo }: any) {
       `http://api.weatherstack.com/current?access_key=54ad97b182ce7a4f6fd118a407dfb85b&query=${capital}`
     );
     let data = await response.json();
-
-    console.log(data);
     
     setWeatherInfo(data);
   }

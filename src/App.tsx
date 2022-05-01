@@ -17,11 +17,11 @@ function App() {
       <HashRouter>
         <Routes>
           <Route
-            path="/"
+            path="/search-countries"
             element={<SearchPage handleSubmit={handleSubmit} />}
           />
           <Route
-            path="/countryinfo/:country"
+            path="/search-countries/countryinfo/:country"
             element={<CountryInfoPage countryName={country} />}
           />
         </Routes>
