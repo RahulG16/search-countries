@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import SearchPage from "./Components/SearchPage/SearchPage";
+import CountryInfoPage from "./Components/CountryInfoPage/CountryInfoPage";
+import { Routes, Route } from "react-router-dom";
+
 
 function App() {
+  let [country, setCountry] = useState<string>("");
+
+  function handleSubmit(country: string) {
+    setCountry(country);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <Routes>
+          <Route path="/home" element={<SearchPage handleSubmit={handleSubmit} />} />
+          <Route path="/countryinfo/:country" element={<CountryInfoPage countryName={country} />} />
+        </Routes>
+      </div>
   );
 }
 
