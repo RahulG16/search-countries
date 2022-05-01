@@ -16,7 +16,7 @@ function App() {
       <Router>
         <Routes>
           <Route
-            path="/search-countries"
+            path="/search-countries/"
             element={<SearchPage handleSubmit={handleSubmit} />}
           />
           <Route
