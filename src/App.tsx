@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import SearchPage from "./Components/SearchPage/SearchPage";
 import CountryInfoPage from "./Components/CountryInfoPage/CountryInfoPage";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -13,12 +13,14 @@ function App() {
   }
 
   return (
+    <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/home" element={<SearchPage handleSubmit={handleSubmit} />} />
+          <Route path="/" element={<SearchPage handleSubmit={handleSubmit} />} />
           <Route path="/countryinfo/:country" element={<CountryInfoPage countryName={country} />} />
         </Routes>
       </div>
+    </BrowserRouter>
   );
 }
 
