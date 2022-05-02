@@ -1,6 +1,6 @@
 {
-  "name": "search-country",
-  "homepage": "https://rahulg16.github.io/search-country/",
+  "name": "search-countries",
+  "homepage": "https://rahulg16.github.io/search-countries/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
