@@ -25,8 +25,6 @@ export default function BasicModal({ weatherData }: any) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  console.log(weatherData);
-
   return (
     <div>
       <Button
