@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import SearchPage from "./Components/SearchPage/SearchPage";
 import CountryInfoPage from "./Components/CountryInfoPage/CountryInfoPage";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   let [country, setCountry] = useState<string>("");
@@ -13,18 +13,13 @@ function App() {
 
   return (
     <div className="App">
-      <HashRouter basename="/">
-        <Routes>
-          <Route
-            path="/"
-            element={<SearchPage handleSubmit={handleSubmit} />}
-          />
-          <Route
-            path="/countryinfo/:country"
-            element={<CountryInfoPage countryName={country} />}
-          />
-        </Routes>
-      </HashRouter>
+      <Routes>
+        <Route path="/" element={<SearchPage handleSubmit={handleSubmit} />} />
+        <Route
+          path="/countryinfo/:country"
+          element={<CountryInfoPage countryName={country} />}
+        />
+      </Routes>
     </div>
   );
 }
