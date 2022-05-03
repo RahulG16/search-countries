@@ -10,6 +10,7 @@ interface Props {
 
 function SearchPage({ handleSubmit }: Props) {
   let [searchTerm, setSearchTerm] = useState<string>("");
+  let [disabled, setDisabled] = useState(true);
 
   const navigate = useNavigate();
 
@@ -32,9 +33,22 @@ function SearchPage({ handleSubmit }: Props) {
           InputProps={{ style: { color: "white" } }}
           label="Country Name"
           variant="outlined"
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(e) => {
+            setSearchTerm(e.target.value);
+            if (e.target.value.length > 0) {
+              setDisabled(false);
+            } else {
+              setDisabled(true);
+            }
+          }}
+          sx={{
+            "& .MuiInputLabel-root": { color: "green" }, //styles the label
+            "& .MuiOutlinedInput-root": {
+              "& > fieldset": { borderColor: "white" },
+            },
+          }}
         />
-        <Button variant="contained" type="submit">
+        <Button disabled={disabled} variant="contained" type="submit">
           Search
         </Button>
       </form>

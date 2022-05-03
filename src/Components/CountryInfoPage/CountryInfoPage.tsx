@@ -30,6 +30,8 @@ function CountryInfoPage({ countryName }: Props) {
     <div>
       {countryInfo.length > 0 ? (
         <InfoBox countryInfo={countryInfo[0]} />
+      ) : countryInfo.status === 404 ? (
+        <h1>{countryInfo.message}</h1>
       ) : (
         <h1>Loading...</h1>
       )}

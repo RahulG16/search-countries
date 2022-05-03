@@ -26,9 +26,13 @@
     width: 80%;
 }
 
-#outlined-basic {
+/* #outlined-basic {
     width: 350px;
-}
+} */
+
+.MuiTextField-root {
+    width: 350px;
+} 
 
 @media (max-width: 950px) {
     .searchform {
