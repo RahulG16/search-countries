@@ -20,7 +20,7 @@ function InfoBox({ countryInfo }: any) {
 
   let [weatherInfo, setWeatherInfo] = useState<any>({})
 
-  // let API_Key = "195ad91fafc3f5e4e14596f1b639bac7";
+  let API_Key = "195ad91fafc3f5e4e14596f1b639bac7";
 
   useEffect(() => {
     getWeatherInfo(countryInfo.capital[0]);
