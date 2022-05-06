@@ -50,7 +50,7 @@ function InfoBox({ countryInfo }: any) {
       <Grid container spacing={2}>
         <Grid item xs={4} className="capital-box">
           <Item>
-            {weatherInfo.success !== false && Object.keys(weatherInfo).length > 3 ? (
+            {weatherInfo.success !== false && Object.keys(weatherInfo).length > 2 ? (
               <Modal weatherData={weatherInfo} />
             ) : (
               <h3>Capital</h3>
