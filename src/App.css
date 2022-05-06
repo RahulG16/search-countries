@@ -4,9 +4,9 @@
   display: flex;
   justify-content: center;
   margin: 40px auto;
-  color: white;
+  color: black;
 }
 
 body {
-  background-color: #0a1929;
+  background-color: #f0f3f7;
 }

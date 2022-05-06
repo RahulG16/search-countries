@@ -3,24 +3,34 @@
   "homepage": "https://rahulg16.github.io/search-countries/",
   "version": "0.1.0",
   "private": true,
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  },
   "dependencies": {
+    "@babel/preset-react": "^7.16.7",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.6.3",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.4.1",
     "@types/node": "^16.11.32",
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
-    "axios": "^0.27.2",
+    "babel-jest": "^28.0.3",
     "gh-pages": "^3.2.3",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "typescript": "^4.6.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -28,7 +38,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -48,5 +58,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/jest": "^27.5.0",
+    "jest": "^28.0.3",
+    "ts-jest": "^28.0.1",
+    "typescript": "^4.6.4"
   }
 }

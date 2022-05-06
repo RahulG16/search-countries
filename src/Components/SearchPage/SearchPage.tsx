@@ -28,11 +28,9 @@ function SearchPage({ handleSubmit }: Props) {
         }}
       >
         <TextField
-          id="outlined-basic"
-          InputLabelProps={{ style: { color: "white" } }}
-          InputProps={{ style: { color: "white" } }}
+          id="standard-basic"
           label="Country Name"
-          variant="outlined"
+          variant="standard"
           onChange={(e) => {
             setSearchTerm(e.target.value);
             if (e.target.value.length > 0) {
@@ -41,14 +39,8 @@ function SearchPage({ handleSubmit }: Props) {
               setDisabled(true);
             }
           }}
-          sx={{
-            "& .MuiInputLabel-root": { color: "green" }, //styles the label
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": { borderColor: "white" },
-            },
-          }}
         />
-        <Button disabled={disabled} variant="contained" type="submit">
+        <Button name='search' disabled={disabled} variant="contained" type="submit">
           Search
         </Button>
       </form>

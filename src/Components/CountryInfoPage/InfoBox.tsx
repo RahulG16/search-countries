@@ -20,13 +20,15 @@ function InfoBox({ countryInfo }: any) {
 
   let [weatherInfo, setWeatherInfo] = useState<any>({})
 
+  // let API_Key = "195ad91fafc3f5e4e14596f1b639bac7";
+
   useEffect(() => {
     getWeatherInfo(countryInfo.capital[0]);
   }, [countryInfo])
 
   async function getWeatherInfo(capital: string) {
     let response = await fetch(
-      `http://api.weatherstack.com/current?access_key=54ad97b182ce7a4f6fd118a407dfb85b&query=${capital}`
+      `http://api.weatherstack.com/current?access_key=${API_Key}&query=${capital}`
     );
     let data = await response.json();
     
